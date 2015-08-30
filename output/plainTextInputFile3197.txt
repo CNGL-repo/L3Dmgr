@@ -1,0 +1,10 @@
+red
+green
+blue
+blue blue
+blue
+white
+zielony
+niebieski
+schwarz
+black

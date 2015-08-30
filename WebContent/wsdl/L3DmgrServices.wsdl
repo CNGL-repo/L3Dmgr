@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservices.com.l3dmgr" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://webservices.com.l3dmgr" xmlns:intf="http://webservices.com.l3dmgr" xmlns:tns1="http://io.java" xmlns:tns2="http://core.rs.ws.javax" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservices.com.l3dmgr" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://core.rs.ws.javax"/>
+   <import namespace="http://io.java"/>
+   <element name="generateOptimalPathService">
+    <complexType>
+     <sequence>
+      <element name="incomingData" type="xsd:anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="generateOptimalPathServiceResponse">
+    <complexType>
+     <sequence>
+      <element name="generateOptimalPathServiceReturn" type="xsd:anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="generateOptimalPathServiceResponse">
+
+      <wsdl:part element="impl:generateOptimalPathServiceResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="generateOptimalPathServiceRequest">
+
+      <wsdl:part element="impl:generateOptimalPathService" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="L3DmgrServices">
+
+      <wsdl:operation name="generateOptimalPathService">
+
+         <wsdl:input message="impl:generateOptimalPathServiceRequest" name="generateOptimalPathServiceRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:generateOptimalPathServiceResponse" name="generateOptimalPathServiceResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="L3DmgrServicesSoapBinding" type="impl:L3DmgrServices">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="generateOptimalPathService">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="generateOptimalPathServiceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="generateOptimalPathServiceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="L3DmgrServicesService">
+
+      <wsdl:port binding="impl:L3DmgrServicesSoapBinding" name="L3DmgrServices">
+
+         <wsdlsoap:address location="http://localhost:8080/L3Dmgr/services/L3DmgrServices"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
