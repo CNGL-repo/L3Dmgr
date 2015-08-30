@@ -33,8 +33,11 @@ import static org.joox.JOOX.$;
 @Path("/")
 public class L3DmgrServices {
 	
+/* Comment or discomment the lines below depending on the environment, and update the username ("calvodea") */
 	String basePath = "/var/www/webservices/l3dmgr/"; // [PRODUCTION] Path to default input files 
+	String resultsBaseURL = "http://l3dmgr.peep.ie/output/"; // [PRODUCTION] URL to results file
 //	String basePath = "/home/calvodea/workspace/L3Dmgr/"; // [DEVELOPMENT] Path to default input files
+//	String resultsBaseURL = basePath + "output/"; // [DEVELOPMENT] URL to results file
 	
 	@POST
 	@Path("/generateOptimalPath")
@@ -171,8 +174,6 @@ public class L3DmgrServices {
 		String optimalPathFileName = "results" + processId + ".txt";
 		// Absolute path where the Optimal Path result files are hosted
 		String resultsBasePath = basePath + "output/";
-		// URL where the Optimal Path result files are hosted
-		String resultsBaseURL = "http://l3dmgr.peep.ie/output/";
 		
 		File f = new File(resultsBasePath + optimalPathFileName);
 		if(f.exists()) { // The file is ready and available
